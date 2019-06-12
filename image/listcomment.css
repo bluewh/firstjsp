@@ -1,0 +1,17 @@
+span.fd{
+	float: left;
+}
+span.fdr{
+	float:right;
+}
+.publish{
+	width: 600px;
+}
+.mian{
+	background-image: url(comment.jpg) ;
+	width: 550px;
+	height: 200px;
+}
+.maincomment{
+	width: 650px;
+}

@@ -1,0 +1,17 @@
+.news_disp{
+	margin:20px;
+}
+span.left-t{
+	float: left;
+}
+span.right-t{
+	float: right;
+}
+.news_time{
+	width: 480px;
+	height: 30px;
+}
+.left_zw{
+	width: 480px;
+	height: 170px;
+}

@@ -1,0 +1,46 @@
+<%@page language="java" contentType="text/html;charset=UTF-8"%>
+	<div class="sidesec">
+	    <div class="sidesec_bt"><span>站内搜索</span></a></div>
+		<hr/>
+		<div class="sideform">
+		<form action="news" method="get" id="formQ">
+		    <div id="leftdiv">
+				<input type="hidden" value="query" name="action"/>
+				<input type="text" value="请输入关键字" name="Keyword"/>
+			</div>
+			<div id="rightdiv">
+			    <img id="sumbitBtn" style="cursor:pointer;" onclick="formQ.submit()" src="image/ss.jpg" width=18px height=18px></img>
+			</div>
+		</form>
+		</div>
+	</div>
+	<div class="sidesec">
+				    <div class="sidesec_bt">
+					    <span>热点新闻</span></a>
+					</div>
+					<hr/>
+					<div class="sidesec_list">
+					    <ul>
+						    <li><a href="#">图书馆积极开展微平台建设</a></li>
+						    <li><a href="#">时尚礼仪专家做客我校</a></li>
+						    <li><a href="#">智慧城市计划投资规模超万亿</a></li>
+						    <li><a href="#">华为发布荣耀独立品牌</a></li>
+						    <li><a href="#">前外交部部长来我校作主题报告</a></li>
+					    </ul>
+					</div>
+				</div>
+				<div class="sidesec">
+				    <div class="sidesec_bt">
+					    <span>最新评论</span></a>
+					</div>
+					<hr/>
+					<div class="sidesec_list">
+					    <ul>
+						    <li><a href="#">网络空间安全已经成为国家安全的重要组成</a></li>
+						    <li><a href="#">网络安全很重要，有必要立法</a></li>
+						    <li><a href="#">希望能够多举办高档次的讲座和报告</a></li>
+						    <li><a href="#">苹果真是太牛了</a></li>
+						    <li><a href="#">为华为加油</a></li>
+						</ul>
+		</div>
+	</div>

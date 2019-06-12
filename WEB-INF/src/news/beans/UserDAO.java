@@ -1,0 +1,42 @@
+package news.beans;
+import java.sql.*;
+public class UserDAO{
+	public boolean queryByNamePwd(String uName,String up){
+		boolean result=false;
+		Connection conn=null;
+		ResultSet rs=null;
+		Statement stmt=null;
+		try{
+			conn=DBGet.getConnection();
+			stmt=conn.createStatement();
+			String sql="select * from user where username='"+uName+"' and password='"+up+"'";
+			rs=stmt.executeQuery(sql);
+			if(rs!=null&&rs.next())
+				result=true;
+		}catch(SQLException el){
+			System.out.println(el+"dao");
+		}finally{
+			DBGet.closeConnection(conn);
+		}
+		return result;
+	}
+	public boolean addUser(User user){
+		boolean result=false;
+		int n=0;
+		Connection conn=null;
+		Statement stmt=null;
+		try{
+			conn=DBGet.getConnection();
+			stmt=conn.createStatement();
+			String sql="insert into user values(null,'"+user.getUsername()+"','"+user.getPassword()+"','"+user.getGender()+"','"+user.getResume()+"')";
+			n=stmt.executeUpdate(sql);
+		}catch(SQLException el){
+			System.out.println(el+"dao");
+		}finally{
+			DBGet.closeConnection(conn);
+		}
+		if(n>0)
+			result=true;
+		return result;
+	}
+}

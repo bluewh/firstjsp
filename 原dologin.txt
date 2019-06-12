@@ -1,0 +1,43 @@
+<!--
+<%@page language="java" contentType="text/html;charset=UTF-8"%>
+<%@page language="java" import="java.sql.*"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String uname=request.getParameter("username");
+	String pwd=request.getParameter("password");
+
+	Connection conn=null;
+	ResultSet rs=null;
+	Statement stmt=null;
+
+	String sDBDriver="com.mysql.jdbc.Driver";
+	String sConnStr="jdbc:mysql://localhost:3306/newsdb";
+	String username="root";
+	String password="infinite";
+
+	try{
+		Class.forName(sDBDriver);
+	}
+	catch(ClassNotFoundException ex){
+		System.err.println(ex.getMessage());
+	}
+
+	try{
+		conn=DriverManager.getConnection(sConnStr,username,password);
+		stmt=conn.createStatement();
+		String sql="SELECT * FROM user WHERE username='"+uname+"'and password='"+pwd+"'";
+		rs=stmt.executeQuery(sql);
+	
+	if(rs!=null&&rs.next()){
+		session.setAttribute("username",uname);
+		response.sendRedirect("index.jsp");
+	}else{
+		response.sendRedirect("userLogin.jsp");
+	}
+	}catch(SQLException e1){
+		out.println(e1);
+	}finally{
+		conn.close();
+	}
+%>
+-->
